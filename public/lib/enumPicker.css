@@ -1,0 +1,41 @@
+.ep-window {
+  width: 100%;
+  overflow-x: auto;
+  padding-left: .5rem;
+}
+
+.ep-view td {
+  padding-left: .5rem;
+  padding-right: .5rem;
+  overflow: hidden;
+  white-space: nowrap;  
+}
+
+.ep-panel, .ep-row {
+  background-color: #fefff0;
+  margin: .25rem;
+}
+
+.ep-row div {
+  display: inline-block;
+  padding-left: .5rem;
+  padding-right: .5rem;
+}
+
+.ep-input-container, .ep-input-div {
+  display: inline;
+  cursor: default;
+  margin-left: .5rem;
+}
+
+.ep-input-div {
+  background-color: white;
+}
+
+.ep-disabled {
+  color: silver;
+}
+
+.ep-hidden {
+  display: none;
+}

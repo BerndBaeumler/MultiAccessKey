@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Multi-access Key</title>
+    <link rel="stylesheet" type="text/css" href="lib/split/split.css" />
+    <link rel="stylesheet" type="text/css" href="lib/smartTree.css" />
+    <link rel="stylesheet" type="text/css" href="lib/enumPicker.css" />
+    <link rel="stylesheet" type="text/css" href="lib/maKey.css" />
+    <script src="lib/split/split.js"></script>
+    <script src="lib/maKeyBase.js"></script>
+    <script src="data/basicCharacters.js"></script>
+    <script src="data/characterDescriptions.js"></script>
+    <script src="data/CalliphoridGenera.js"></script>
+    <script src="data/Lucilia.js"></script>
+  </head>
+  <body>
+    <div id="left-window" class="split-horizontal">
+      <div id="key-window" class="split-vertical">
+        <div id="key-menu" class="menu">
+          <div class="logo">maKey</div>
+          <div class="menu-block">
+            <div id="mi-multi-access-key" class="menu-item">Multi access</div>
+            <div id="mi-single-access-key" class="menu-item">Single access</div>
+            <!-- div id="mi-help" class="menu-item">?</div -->
+          </div>
+        </div>
+        <div id="single-access-view"></div>
+        <div id="multi-access-view"></div>
+      </div>
+      <div id="taxons-window" class="split-horizontal">
+        <div id="taxons-tree"></div>
+      </div>
+    </div>
+    <div id="right-window" class="split-horizontal">
+      <div id="info-window" class="split-vertical"></div>
+      <div id="character-window" class="split-vertical">
+        <div id="character-tree"></div>
+      </div>
+    </div>
+    
+    <script src="./lib/smartTree.js"></script>
+    <script src="./lib/taxonsTree.js"></script>
+    <script src="./lib/characterTree.js"></script>
+    <script src="./lib/enumPicker.js"></script>
+    <script src="./lib/multiAccessKey.js"></script>
+    <script src="./lib/singleAccessKey.js"></script>
+    <script src="./lib/maKeyBrowser.js"></script>
+    <script>
+      Split(['#left-window', '#right-window'], {
+        minSize: [0, 0],
+        sizes: [50, 50],
+        direction: 'horizontal'
+      });
+      Split(['#key-window', '#taxons-window'], {
+        minSize: [0, 0],
+        sizes: [70, 30],
+        direction: 'vertical'
+      });
+      Split(['#info-window', '#character-window'], {
+        minSize: [0, 0],
+        sizes: [70, 30],
+        direction: 'vertical'
+      });
+    </script>
+  </body>
+</html>

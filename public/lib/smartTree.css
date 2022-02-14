@@ -1,0 +1,57 @@
+.smart-tree-container {
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.smart-tree {
+  background-color: whitesmoke;
+  padding-top: .25rem;
+  padding-bottom: .25rem;
+}
+
+.st-item {
+  overflow: hidden;
+}
+
+.st-head {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 1px;
+}
+
+.st-exp {
+  width: 1rem;
+  text-align: center;
+}
+
+.st-label {
+  cursor: default;
+  width: 100%;
+}
+
+.st-label-number, .st-input-number, .st-label-div {
+  display: inline;
+  cursor: default;
+}
+
+.st-input-number {
+  margin-left: 1rem;
+  width: 3rem;
+}
+
+.st-data, .st-children {
+  padding-left: 1rem;
+  height: auto;
+  overflow:hidden;
+  box-sizing: border-box;
+  transition: .1s;
+}
+
+.st-hidden {
+  height: 0;
+  transition: .1s;
+}
+

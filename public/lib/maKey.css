@@ -1,0 +1,164 @@
+html, body {
+  background-color: gray;
+  font-family: sans-serif;
+  height: 100%;
+  margin: 0;
+  cursor: default;
+  overflow: hidden;
+}
+
+#key-window {
+  display: flex;
+  flex-direction: column;
+}
+
+#single-access-view {
+  padding-top: .25rem;
+  width: 100%;
+  overflow-y: auto;
+}
+
+#info-window {
+  overflow-y: auto;
+}
+
+#info-view {
+  background-color: whitesmoke;
+  width: 100%;
+}
+
+p, .ma-caption {
+  margin: 0;
+  padding: .125rem;
+}
+
+.ma-caption {
+  padding-top: 0;
+  padding-bottom: .5rem;
+}
+
+.ma-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.ma-heading {
+  font-weight: bold;
+}
+
+.ma-small-line {
+  font-size: .75rem;
+}
+
+.ma-caption p {
+  margin: 0;
+  padding: 0;
+}
+  
+.item-inactive, .item-alternative, .item-current, .item-hidden {
+  padding: 3px;
+}
+
+.item-current {
+  border-right: 3px solid black;
+  background: white;
+}
+
+.item-alternative {
+  background: gainsboro;
+}
+
+.item-hidden {
+  display: none;
+}
+
+.key-cursor-block {
+  position: absolute;
+  width: 3px;
+  background: black;
+}
+
+.image-cursor-block {
+  position: absolute;
+  width: 3px;
+  background: orange;
+}
+
+.info-window-element {
+  max-width: 100%;
+}
+
+.embedded-html {
+  width: 100%;
+  border: 0 none;
+}
+
+.embedded-pdf {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.key-id {
+  font-size: 0.75rem;
+}
+
+.taxon-interim-result, .taxon-final {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 2rem;
+  text-align: right;
+  font-weight: bold;
+}
+
+.taxon-interim-result {
+  color: blue;
+}
+
+.ma-multi-select {
+  background-color: white;
+}
+
+.row-selected {
+  background-color: #deffd1;
+}
+
+.uncovered {
+  color: gray;
+}
+
+.menu, .menu-block {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #d3ffc2;
+  cursor: pointer;
+}
+
+.menu-block {
+  flex-grow: 1;
+}
+
+.menu-item:hover {
+  background-color: #c8f2b8;
+}
+
+.menu-item, .logo {
+  padding: .25rem;
+  margin-left: .25rem;
+  margin-right: .25rem;
+}
+
+.menu-item-selected {
+  padding-bottom: 0;
+  border-bottom: .25rem solid #00cc11;
+}
+
+.logo {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: #00cc11;
+  color: white;
+  font-weight: bold;
+  cursor: default;
+}
