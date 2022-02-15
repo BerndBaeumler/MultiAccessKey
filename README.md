@@ -18,6 +18,14 @@ The main screen of maKey contains four windows. These windows are marked with re
 3. Information about the currently selected character or taxon
 4. A description of the characters related to the taxon that was last selected 
 
+For a single-access key the content of these windows differs only slightly:  
+1. A window with the current key options and the history of previously chosen options 
+   - Every option is specified by a set of characters
+   - An option may specify one or multiple taxons as result of the identification process
+2. A list with the taxons covered by the single-access key
+3. Information about the currently selected character or taxon
+4. A description of the characters related to the taxon in the list of taxons 
+
 ## Dependencies
 maKey includes a modified version of
 - split.js from https://github.com/nathancahill/split/tree/v1.3.5
