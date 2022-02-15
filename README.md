@@ -24,7 +24,7 @@ For a single-access key the content of these windows differs only slightly:
    - An option may specify one or multiple taxons as result of the identification process
 2. A list with the taxons covered by the single-access key
 3. Information about the currently selected character or taxon
-4. A description of the characters related to the taxon in the list of taxons 
+4. A description of the characters related to the taxon which is selected in the list of taxons 
 
 ## Dependencies
 maKey includes a modified version of
