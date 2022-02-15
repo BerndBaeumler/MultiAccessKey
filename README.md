@@ -7,7 +7,7 @@ To try out the framework please create a local copy of the repository and run th
 
 The file "public/maKeyBasicTest.html" is more suitable to try out the basic functionality of the framework. This key contains only three dummy organisms.
 
-## The main screen
+## Using maKey
 The following screenshot shows the main screen of maKey with a multi-access key.
 
 ![Sreenshot](docs/assets/maKey.jpg)
@@ -25,6 +25,71 @@ For a single-access key the content of these windows differs only slightly:
 2. A list with the taxons covered by the single-access key
 3. Information about the currently selected character or taxon
 4. A description of the characters related to the taxon which is selected in the list of taxons 
+
+## Creating keys
+Keys for maKey must be specified in JavaScript files.
+The following JavaScript code defines and registers a key with one taxon.
+
+```
+MAKey.register('Stomorhina', {
+  taxons: {
+    'Stomorhina lunata': {
+      female: {
+        'Body': {
+          'Color': 'turquoise',
+          'Length [mm]': [3.3, 4, null, 5, 5.6],
+          'Bristles': 2
+        },
+        fig: 10099
+      }
+    }
+  },
+  figures: {
+    10099: {
+      caption: 'Stomorhina lunata, female',
+      c: '(CC BY-NC) Marie Lou Legrand',
+      source: 'https://www.inaturalist.org/photos/159339502'
+    }
+  }
+});
+```
+  
+You can see the result of this code in the right windows of the screenshot shown above.
+
+Many of the keys available in the literature are single-access keys.
+If a single-access key is converted into the maKey input format it can be displayed by maKey as
+single-access or multiple-access key.
+
+The following JavaScript code defines and registers a key which can be used as single-access or multiple-access key.
+
+```
+MAKey.register('Lucilia', {
+  singleAccessKey: {
+    1: {
+      1: {
+        next: 2,
+        'Basicostae|Color': ['whitish', {fig: 10199}],
+        'Subcostal sclerite|Hairs|Color': ['yellow', {fig: 10101}]
+      },
+      2: {
+        taxon: 'Lucilia (not covered by this key)',
+        'Basicostae|Color': 'black|brown',
+        'Subcostal sclerite|Hairs|Color': 'black'
+      }
+    },
+    2: {
+      1: {
+        taxon: 'Lucilia sericata',
+        'Palpi|Color': ['orange', '(sometimes darker at tip)']
+      },
+      2: {
+        taxon: 'Lucilia richardsi',
+        'Palpi|Color': 'dark brown|blackish']
+      }
+    }
+  }
+});
+```
 
 ## Dependencies
 maKey includes a modified version of
