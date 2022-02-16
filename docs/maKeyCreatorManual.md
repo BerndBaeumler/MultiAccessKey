@@ -73,4 +73,16 @@ MAKey.register('Stomorhina', {
     }
   }
 });
+```
+
+## Working with characters
+Characters are used to distinguish between taxons and taxonomic groups. 
+Examples for a colloquial formulation of a character are:
+- Body length between 4 and 6 mm.
+- The head is red.
+
+The formal parts of a character are:
+- A body part (like "head")
+- A character category (like "length" or "color" which is is often not explicitly mentioned in a colloquial formulation)
+- A value or value range (like "red" or "4 to 6 mm") 
 
