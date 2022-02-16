@@ -4,7 +4,7 @@ var MAKey = MAKey || {};
 
 MAKey.bodyPartDefs = {
   legParts: ['Coxa', 'Trochanter', 'Femur', 'Tibia', 'Tarsal segments', 'Claws']
-}
+};
 
 MAKey.bodyParts = {
   main: ['Wings', 'Legs', 'Head', 'Body'],

@@ -86,3 +86,50 @@ The formal parts of a character are:
 - A character category (like "length" or "color" which is is often not explicitly mentioned in a colloquial formulation)
 - A value or value range (like "red" or "4 to 6 mm") 
 
+### Defining body parts
+Body parts should be defined as globally and universally as possible.
+This enables a consistent combination of several partial keys to create a more complex key.
+
+Per convention body parts shall be defined in the `pulbic/data/basicCharacters.js` file.
+
+```
+MAKey.bodyParts = {
+  main: ['Wings', 'Legs', 'Head', 'Body'],
+  'Legs': ['Front legs', 'Mid legs', 'Hind legs'],
+  'Head': ['Mouthparts', 'Face', 'Eyes']
+};
+```
+
+maKey converts this definition to the following tree:
+```
+ - Wings
+ - Legs
+    - Front legs
+    - Mid legs
+    - Hind legs
+ - Head
+    - Mouthparts
+    - Face
+    - Eyes
+ - Body
+```
+
+Insect legs are made up of many parts, and the structure of all legs is very similar.
+It is therefore advisable to define the structure of a leg once and
+to apply this definition to each leg. JavaScript offers different solutions for this.
+A complex but easy to understand solution is shown below:
+
+```
+MAKey.bodyPartDefs = {
+  legParts: ['Coxa', 'Trochanter', 'Femur', 'Tibia', 'Tarsal segments', 'Claws']
+};
+
+MAKey.bodyParts = {
+  main: ['Wings', 'Legs', 'Head', 'Body'],
+  'Legs': ['Front legs', 'Mid legs', 'Hind legs'],
+    'Front legs': MAKey.bodyPartDefs.legParts,
+    'Mid legs': MAKey.bodyPartDefs.legParts, 
+    'Hind legs': MAKey.bodyPartDefs.legParts,
+  'Head': ['Mouthparts', 'Face', 'Eyes']
+};
+```
