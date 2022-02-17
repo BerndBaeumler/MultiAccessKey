@@ -91,6 +91,8 @@ MAKey.register('Lucilia', {
 });
 ```
 
+[docs/maKeyCreatorManual.md](docs/maKeyCreatorManual.md) gives further information on creating keys.
+
 ## Dependencies
 maKey includes a modified version of
 - split.js from https://github.com/nathancahill/split/tree/v1.3.5
