@@ -133,3 +133,98 @@ MAKey.bodyParts = {
   'Head': ['Mouthparts', 'Face', 'Eyes']
 };
 ```
+
+### Basic characters
+Basic characters are used to define properties like colors.
+
+Basic characters must be declared.
+This allows maKey to present a well structured table of available properties.
+
+Per convention basic characters shall be defined in the `pulbic/data/basicCharacters.js` file.
+Basic characters must be part of the JavaScript object `MAKey.basicCharacters`.
+
+#### Defining the properties of basic characters
+The following JavaScript code shows an abridged version of `MAKey.basicCharacters` with a basic definition of colors.
+
+```
+MAKey.basicCharacters = {
+  colorModifiers: ['light', 'dark'],
+  colors: [
+    ['white', 'whitish'],
+    ['black', 'blackish', 'grey'],
+    ['brown', 'brownish', 'grey-brown'],
+    ['blue', 'bluish', 'turquoise'],
+    ['green', 'greenish'],
+    ['red', 'reddish', 'orange'],
+    ['yellow', 'yellowish', 'yellowish-grey'],
+    ['bronze', 'gold', 'silver']
+  ],
+  position: ['laterally'],
+  visibility: ['clearly_visible', 'microscopic'],
+  pattern: ['striped', 'curled', 'patched'],
+};
+```
+
+`colorModifiers` defines a JavaScript array with two properties.
+`colors` defines a table with many properties. To define a table an array of arrays is used.
+
+Based on this definitions maKey can enable inputs like `bronze`, `light green` or `dark blue`.
+
+The definition of `position`, `visibility`, and `pattern` is used in the following section.
+
+#### Defining an input rule with a combination of basic characters
+A combination of basic characters allows complex use cases based on basic characters.
+Currently maKey only supports the use of one combination.
+
+The following JavaScript code shows an abridged version of `MAKey.inputRules` with the definition of a combination.
+
+```
+MAKey.inputRules = {
+  combinations: [
+    { singleChoice: 'position visibility',
+      multipleChoiceSelector: 'pattern',
+      multipleChoice: 'colorModifiers colors'
+    }
+  ]
+};
+```
+
+The following screenshot shows the main screen of maKey with the combination defined above.
+The combination is marked with the red number 1.
+The basic characters `position` and `visibility` are hidden because the key does not use them and maKey only shows characters which are relevant in the current context.
+
+![Sreenshot](docs/assets/maKey.jpg)
+
+With the help of this definition, the user can describe the stripes of a zebra:
+- `striped` with the colors `white`, `light grey` and `black`.
+
+#### Using basic characters to define characters of organisms
+Here are some examples to define the body color of an organism within a key.
+
+An organism with a white body:
+```
+'Body|Color': 'white'
+```
+
+The body of this organism can be white, grey or light grey:
+```
+'Body|Color': 'white|grey|light grey'
+```
+
+To describe a striped body a list based on a JavaScript array is used.
+The body of the following organism is striped in white and black like the body of some zebras.
+```
+'Body|Color': ['striped', 'white', 'black']
+```
+
+Some zebras have a grey part between the white and the black stripes:
+```
+'Body|Color': ['striped', 'white', 'grey|light grey|dark grey', 'black']
+```
+
+If you try this example, you will see that the multi-access key cannot distinguish the two-colored zebra from the three-colored one.
+This is because the two-colored zebra corresponds to an incomplete description of the three-colored zebra.
+
+### Character descriptions
+Character descriptions can be used to describe highly specialized characters.
+Per convention they shall be stored in the `pulbic/data/characterDescriptions.js` file.

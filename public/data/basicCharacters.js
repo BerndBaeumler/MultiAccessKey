@@ -92,6 +92,6 @@ MAKey.inputRules = {
   withoutInput: ['NOT', 'non-metallic', 'male', 'female'],
   globalTypes: ['pattern'],
   strictTypes: ['strictColors']
-}
+};
 
 MAKey.CharacterValues.init();
