@@ -193,7 +193,7 @@ The following screenshot shows the main screen of maKey with the combination def
 The combination is marked with the red number 1.
 The basic characters `position` and `visibility` are hidden because the key does not use them and maKey only shows characters which are relevant in the current context.
 
-![Sreenshot](docs/assets/maKey.jpg)
+![Sreenshot](assets/maKey.jpg)
 
 With the help of this definition, the user can describe the stripes of a zebra:
 - `striped` with the colors `white`, `light grey` and `black`.
