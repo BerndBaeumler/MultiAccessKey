@@ -225,6 +225,14 @@ Some zebras have a grey part between the white and the black stripes:
 If you try this example, you will see that the multi-access key cannot distinguish the two-colored zebra from the three-colored one.
 This is because the two-colored zebra corresponds to an incomplete description of the three-colored zebra.
 
+### Number ranges
+The following example defines the ratio between the length and the wide of the third antennal segment of a fly.
+The specified ratio has the rang from 2 to 2.5.
+An additional comment describes this range.
+```
+'Antennal segment 3|Ratio of length to wide': [2, null, 2.5, '(2-2.5 times as long as wide)']
+```
+
 ### Character descriptions
 Character descriptions can be used to describe highly specialized characters.
 Per convention they shall be stored in the `pulbic/data/characterDescriptions.js` file.
