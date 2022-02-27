@@ -75,7 +75,7 @@ MAKey.basicCharacters = {
     ['black', 'blackish', 'grey'],
     ['brown', 'brownish', 'grey-brown'],
     ['blue', 'bluish', 'turquoise'],
-    ['green', 'greenish'],
+    ['green', 'greenish', 'olive'],
     ['red', 'reddish', 'orange'],
     ['yellow', 'yellowish', 'yellowish-grey'],
     ['bronze', 'gold', 'silver']
