@@ -175,18 +175,14 @@ MAKey.Parser = class Parser {
         }
       }
       let n = res.numbers.length;
-      switch (n) {
-        case 0:
-        case 1:
-        case 4:
-        case 5:
-          break;
-        case 2:
-        case 3:
-          res.numbers.unshift(null);
-          break;
-        default:
+      if (n > 1) {
+        if (n > 5) {
           console.log('ERROR Wrong quantity of ', n, 'numbers in character description.');
+        }
+        if (n < 4) {
+          let nums = [res.numbers[0], null, res.numbers[1], null, res.numbers[2]];
+          res.numbers = nums;
+        }
       }
       return res;
     }
@@ -202,29 +198,41 @@ MAKey.Parser = class Parser {
       let nums = displayData.numbers;
 
       function appendNumber(id, prefix, suffix) {
-        if (txt && prefix.length > 4) {
-          txt = txt + ', ';
-        }
         if (nums[id]) {
+          if (txt && prefix.length > 4) {
+            txt = txt + ', ';
+          }
           txt = txt + (prefix) + nums[id] + (suffix || '');
         }
       }
       
       if (nums.length > 1) {
-        if (!nums[3] && !nums[4]) {
-          appendNumber(0, 'greater than ');
-          appendNumber(1, 'mostly greater than ');
-          appendNumber(2, 'typically ');
-        } else if (!nums[0] && !nums[1]) {
-          appendNumber(4, 'less than ');
-          appendNumber(3, 'mostly less than ');
-          appendNumber(2, 'typically ');
-        } else {
-          appendNumber(0, '(', ') ');
-          appendNumber(1, '');
+        let min = nums[0] || nums[1];
+        let max = nums[3] || nums[4];
+        if (min && max) {
+          if (nums[1]) {
+            appendNumber(0, '(', ') ');
+            appendNumber(1, '');
+          } else {
+            appendNumber(0, '');
+          }
           appendNumber(2, ' .. ');
-          appendNumber(3, ' .. ');
-          appendNumber(4, ' (', ')');
+          if (nums[3]) {
+            appendNumber(3, ' .. ');
+            appendNumber(4, ' (', ')');
+          } else {
+            appendNumber(4, ' .. ');
+          }
+        } else {
+          if (min) {
+            appendNumber(0, 'greater than ');
+            appendNumber(1, 'usually greater than ');
+          }
+          if (max) {
+            appendNumber(4, 'less than ');
+            appendNumber(3, 'usually less than ');
+          }
+          appendNumber(2, 'typically ');
         }
       }
       if (displayData.strings.length) {

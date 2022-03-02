@@ -227,10 +227,20 @@ This is because the two-colored zebra corresponds to an incomplete description o
 
 ### Number ranges
 The following example defines the ratio between the length and the wide of the third antennal segment of a fly.
-The specified ratio has the rang from 2 to 2.5.
+The specified ratio has the rang from 1.5 to 2.
 An additional comment describes this range.
 ```
-'Antennal segment 3|Ratio of length to wide': [2, null, 2.5, '(2-2.5 times as long as wide)']
+'Antennal segment 3|Ratio of length to wide': [1.5, null, 2, '(1.5-2 times as long as wide)']
+```
+
+The different variants to define ranges are shown below.
+```
+'Some|Length [mm]': [2, null]              // More than 2 mm long
+'Some|Length [mm]': [null, 3, null, null]  // Usually more than 3 mm long
+'Some|Length [mm]': [2, 3, 4, null]        // More than 2 mm long, usually longer than 3 mm, typically 4 mm long
+'Some|Length [mm]': [null, null, 6]        // Less than 6 mm long
+'Some|Length [mm]': [null, null, null, 5]  // Usually less than 5 mm long
+'Some|Length [mm]': [null, null, 4, 5, 6]  // Less than 6 mm long, usually less than 5 mm long, typically 4 mm long
 ```
 
 ### Character descriptions
